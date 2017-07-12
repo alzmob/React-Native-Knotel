@@ -12,7 +12,7 @@ import {
   View,
   Button
 } from 'react-native';
-import MapView from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 const Popup = require('rn-popup');
 
 var list = [
@@ -25,6 +25,8 @@ var list = [
   { title: 'Park Ave South',
     description: 'Knotel Park Ave South is coming soon.' }
 ];
+
+import mapStyle from './map.json';
 
 export default class Knotel extends Component {
 
@@ -77,7 +79,9 @@ export default class Knotel extends Component {
       return (
         <View style={styles.container}>
           <MapView style={styles.map}
-            region={this.state.region}>   
+            region={this.state.region}
+            provider={PROVIDER_GOOGLE}
+            customMapStyle={mapStyle}>   
             <MapView.Marker.Animated 
               coordinate={this.state.coordinate1}
               title={list[0].title}
