@@ -7,12 +7,4 @@ target 'Knotel' do
 
   pod 'GoogleMaps'
 
-  target 'Knotel-tvOSTests' do
-    inherit! :search_paths
-  end
-
-  target 'KnotelTests' do
-    inherit! :search_paths
-  end
-
 end
